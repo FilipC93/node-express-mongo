@@ -1,0 +1,55 @@
+[
+    {
+        "id": 0,
+        "productName": "Avocado",
+        "from": "Spain",
+        "quantity": "4",
+        "price": "6.50",
+        "organic": true
+    },
+    {
+        "id": 1,
+        "productName": "Goat Cheese",
+        "from": "Portugal",
+        "organic": false
+    },
+    {
+        "id": 2,
+        "productName": "Broccoli",
+        "from": "Greece",
+        "organic": true
+    },
+    {
+        "id": 3,
+        "productName": "Carrots",
+        "from": "France",
+        "organic": true
+    },
+    {
+        "id": 4, 
+        "productName": "Apples"
+    },
+    {
+        "id": 5,
+        "productName": "Oranges"
+    },
+    {
+        "id": 6,
+        "productName": "Corn",
+        "from": "Germany"
+    },
+    {
+        "id": 7,
+        "productName": "Potatoes",
+        "from": "Peru"
+    },
+    {
+        "id": 8,
+        "productName": "Onions"
+    },
+    {
+        "id": 9,
+        "productName": "Tofu",
+        "from": "Japan"
+    }
+]
