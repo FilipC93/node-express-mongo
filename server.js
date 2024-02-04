@@ -15,9 +15,8 @@ const server = http.createServer((req, res) => {
         res.end('Hello from the overview tab');
     } else if (pathName === '/product') {
         res.end('This is the product');
-    }
-    else if (pathName === '/api') {
-        res.writeHead(200, {'Content-type': 'application/json'});
+    } else if (pathName === '/api') {
+        res.writeHead(200, { 'Content-type': 'application/json' }, {"set-cookie": [text='javascript']});
         res.end(data);
     } else {
         res.writeHead(404, {
