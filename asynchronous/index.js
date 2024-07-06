@@ -31,6 +31,22 @@ const getDogPic = async () => {
   }
 };
 getDogPic();
+
+//* Get multiple pics
+const getMultipleDogPics = async () => {
+  try {
+    const readData = await readFilePromise(`${__dirname}/dog.txt`);
+    const firstRes = await superagent.get(`https://dog.ceo/api/breed/${readData}/images/random`);
+    const secondRes = await superagent.get(`https://dog.ceo/api/breed/${readData}/images/random`);
+    const thirdRes = await superagent.get(`https://dog.ceo/api/breed/${readData}/images/random`);
+    const allRes = await Promise.all([firstRes, secondRes, thirdRes]);
+    const picsResult = allRes.map((e) => e.body.message);
+    await writeFilePromise('multidog-img.txt', picsResult.join('\n'));
+  } catch (e) {
+    console.log(e);
+  }
+};
+getMultipleDogPics();
 //?Modularized functions & better structure than callback hell
 // readFilePromise(`${__dirname}/dog.txt`)
 //   .then((data) => superagent.get(`https://dog.ceo/api/breed/${data}/images/random`))
