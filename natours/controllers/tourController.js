@@ -2,7 +2,7 @@ const fs = require('fs');
 
 //!Database
 const tours = JSON.parse(
-  fs.readFileSync(`${__dirname}/../dev-data/data/tours-simple.json`)
+  fs.readFileSync(`${__dirname}/../dev-data/data/tours-simple.json`),
 );
 
 exports.checkId = (req, res, next, val) => {
@@ -52,6 +52,7 @@ exports.getSingleTour = (req, res) => {
 //?Create new tour
 exports.createTour = (req, res) => {
   const newId = tours[tours.length - 1].id + 1;
+  // eslint-disable-next-line prefer-object-spread
   const newTour = Object.assign({ id: newId }, req.body);
   tours.push(newTour);
   fs.writeFile(
@@ -59,7 +60,7 @@ exports.createTour = (req, res) => {
     JSON.stringify(tours),
     (err) => {
       res.status(201).json({ status: 'Success', data: { tours: newTour } });
-    }
+    },
   );
 };
 
