@@ -12,7 +12,6 @@ myEmitter.on('newSale', () => console.log('customer name Filip'));
 myEmitter.on('newSale', (stock) => console.log(`there are ${stock} items left`));
 myEmitter.emit('newSale', 9);
 
-/////////////////////////////////////////////////////////////////////////////////
 const server = http.createServer();
 server.on('request', (req, res) => {
   console.log(req.url);
